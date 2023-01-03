@@ -74,7 +74,7 @@ public class QrCodeReader {
     }
 
     public void readQrCode(String filePath) throws IOException, NotFoundException {
-        String atlasConnectionString = "mongodb+srv://admin:uday%40Mongo02@cluster0.z88hefp.mongodb.net/?retryWrites=true&w=majority";
+        String atlasConnectionString = ""; // Get connection string from Mongodb atlas 
         MongoClient mongoClient = MongoClients.create(atlasConnectionString);
         this.mongoTemplate = new MongoTemplate(mongoClient, "qrCodeData");
 
@@ -108,6 +108,7 @@ public class QrCodeReader {
     }
 
     public static void main(String[] args) {
+        // QR Images from any folder 
         /*
          * QrCodeReader qrCodeReader = new QrCodeReader();
          * try {
